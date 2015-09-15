@@ -2,12 +2,10 @@
   "name": "",
   "version": "1.0.0",
   "description": "Get Seemless integration with M2P MFI API",
-  "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "monitor": "nodemon index.js",
-    "deploy": "gcloud preview app deploy app.yaml"
-  },
+  "start": "node server.js"
+   },
+  "main": "server.js",
   "keywords": [
     "swagger"
   ],
