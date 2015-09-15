@@ -1,0 +1,97 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "MFI API",
+        "description": "Get Seemless integration with M2P MFI API",
+        "version": "1.0.0"
+    },
+    "produces": [
+        "application/json"
+    ],
+    "host": "localhost:8080",
+    "basePath": "/yappay",
+    "paths": {
+        "/registration-manager/registerbusiness": {
+            "post": {
+                "summary": "To Register a new business",
+                "description": "The Products endpoint returns information about the *Uber* products\noffered at a given location. The response includes the display name\nand other details about each product, and lists the products in the\nproper display order.\n",
+                "x-swagger-router-controller": "Register",
+                "tags": [
+                    "Register"
+                ],
+                "operationId": "registrationManagerRegisterbusinessPost",
+                "parameters": [
+                    {
+            "schema": {
+              "$ref": "#/definitions/YappayResponse"
+            },
+            "required": true,
+            "name": "docs",
+            "in": "body"
+          }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A Yappay Response",
+                        "schema": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "YappayResponse": {
+            "type": "object",
+            "properties": {
+                "result": {
+                    "type": "string",
+                    "description": "Server result"
+                },
+                "exception": {
+                    "type": "object",
+                    "properties": {}
+                },
+                "pagination": {
+                    "type": "string",
+                    "description": "Display name of product."
+                },
+                "capacity": {
+                    "type": "string",
+                    "description": "Capacity of product. For example, 4 people."
+                },
+                "image": {
+                    "type": "string",
+                    "description": "Image URL representing the product."
+                }
+            }
+        },
+        "YappayException": {
+            "type": "object",
+            "properties": {
+                "shortMessage": {
+                    "type": "string",
+                    "description": "Server result"
+                },
+                "detailedMessage": {
+                    "type": "string",
+                    "description": "Server result"
+                },
+                "languageCode": {
+                    "type": "string",
+                    "description": "Server result"
+                },
+                "errorCode": {
+                    "type": "string",
+                    "description": "Server result"
+                },
+                "fieldErrors": {
+                    "type": "array",
+                    "description": "Error Fields",
+                    "items": {}               }
+            }
+        }
+    }
+}
